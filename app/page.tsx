@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type UserProps = {
@@ -23,7 +22,7 @@ export default function Home() {
 
   const handleLogin = () => {
     // Redirect to GitHub OAuth login page
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=user`;
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=user`;
   };
 
   const handleLogout = () => {

@@ -21,8 +21,9 @@ const AuthenticatePage = () => {
     // Function to make Axios request
     const fetchData = async (gitHubAuthCode: string) => {
       try {
-        const url = process.env.REACT_APP_API_AUTHENTICATE_URL || null;
-        if (!url) throw new Error("REACT_APP_API_AUTHENTICATE_URL is not set");
+        const url = process.env.NEXT_PUBLIC_API_AUTHENTICATE_URL || null;
+        if (!url)
+          throw new Error("NEXT_PUBLIC_API_AUTHENTICATE_URL is not set");
 
         const { data } = await axios.post(
           url,
