@@ -1,9 +1,12 @@
 "use client";
+import "@/app/globals.css";
 import React, { useEffect } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 type ResponseProps = {
   username: string;
+  avatarUrl: string;
   token: string;
 };
 
@@ -34,6 +37,9 @@ const AuthenticatePage = () => {
             },
           },
         );
+
+        // Store in local storage
+        localStorage.setItem("token", data.token);
         setResponse(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -48,9 +54,22 @@ const AuthenticatePage = () => {
 
   console.log("response", response);
   return (
-    <div>
+    <div className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-950 text-slate-200">
       <h1>Authenticating...</h1>
-      <p>{response?.username ?? "Loading"}</p>
+      {!response && <p>Loading...</p>}
+      {response && (
+        <>
+          <Image
+            src={response.avatarUrl}
+            alt="Avatar"
+            width={200}
+            height={200}
+          />
+          <p>
+            Welcome, {response.username}! Redirecting you to the dashboard...
+          </p>
+        </>
+      )}
     </div>
   );
 };

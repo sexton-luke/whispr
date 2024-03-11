@@ -15,6 +15,11 @@ export default function Home() {
   useEffect(() => {
     // Check if JWT token exists in local storage
     const token = localStorage.getItem("token");
+    if (!token) {
+      // TODO:
+      // Navigate to login page
+      // Remove login functionality here
+    }
     if (token) {
       // TODO: Get user from database using token
     }
