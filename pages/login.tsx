@@ -16,21 +16,21 @@ export default function LoginPage() {
   };
   return (
     <>
-      <div className="bg-slate-950 flex min-h-screen flex-col justify-middle px-6 py-12 lg:px-8">
-        <Card className="sm:mx-auto sm:w-full sm:max-w-lg bg-black mt-10">
-          <CardHeader className="sm:mx-auto text-center text-slate-100 leading-9 tracking-tighter">
-            <CardTitle className="text-3xl font-extrabold">Whispr.</CardTitle>
-            <CardDescription className="text-slate-200 text-2xl font-semibold">
+      <div className="bg-black flex min-h-screen flex-col justify-middle px-6 py-12 lg:px-8">
+        <Card className="sm:mx-auto sm:w-full sm:max-w-lg bg-stone-950 mt-32 border border-stone-700">
+          <CardHeader className="sm:mx-auto text-center text-stone-100 leading-9 tracking-tighter">
+            <CardTitle className="text-3xl font-bold my-8">Whispr</CardTitle>
+            <CardDescription className="text-stone-200 text-2xl">
               Sign in to your account
             </CardDescription>
           </CardHeader>
-          <CardContent className="flex justify-center">
+          <CardContent className="flex justify-center my-4">
             <Button
               onClick={handleLogin}
-              className="bg-slate-100 text-slate-950 hover:bg-slate-950 hover:text-slate-100 group border border-slate-300 shadow-xl transition ease-in-out duration-300 hover:-translate-y-1"
+              className="bg-stone-100 text-black hover:bg-black hover:border-stone-700 hover:text-stone-100 group border border-stone-black transition ease-in-out duration-300 hover:-translate-y-1"
             >
               <svg
-                className="h-5 w-5 fill-[#24292F] group-hover:fill-[#F0F6FC] transition ease-in-out duration-150"
+                className="h-5 w-5 fill-[#24292F] group-hover:fill-stone-100 transition ease-in-out duration-150"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
